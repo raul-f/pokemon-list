@@ -1,0 +1,388 @@
+@font-face {
+  font-family: 'pokemon_hollownormal';
+  src: url("./assets/fonts/pokemon/pokemon_hollow-webfont.woff2") format("woff2"), url("./assets/fonts/pokemon/pokemon_hollow-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pokemon_solidnormal';
+  src: url("./assets/fonts/pokemon/pokemon_solid-webfont.woff2") format("woff2"), url("./assets/fonts/pokemon/pokemon_solid-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: Lato, sans-serif;
+}
+
+.app {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 110vh;
+  padding-bottom: 30px;
+}
+
+.app .header {
+  width: 90%;
+  height: 77px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.35);
+  border-bottom: 3px solid black;
+  background-color: #e80632;
+  color: white;
+  padding: 0 5%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.app .header .navbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app .header .navbox .current-page {
+  margin-right: 20px;
+}
+
+.app .header .navbox .nav-button {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  border-right: none;
+}
+
+.app .header .navbox .nav-button .fas {
+  pointer-events: none;
+}
+
+.app .header .navbox div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app .header .navbox .nav-button-left {
+  border-radius: 5px 0 0 5px;
+}
+
+.app .header .navbox .nav-button-right {
+  border-radius: 0 5px 5px 0;
+  border-right: 1px solid black;
+}
+
+.app .main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.app .footer {
+  width: 100%;
+  height: 27px;
+  background-color: #e80632;
+  position: absolute;
+  bottom: 0;
+  border-top: 3px solid black;
+}
+
+.loading-box .loading-icon {
+  max-width: 48px;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+.list .pokemon {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+  margin-left: 10%;
+  background-color: white;
+  width: 30%;
+  padding: 0 20px 0 0;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
+  height: 175px;
+}
+
+.list .pokemon .pokemon-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list .pokemon .pokemon-info .main-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  height: 150px;
+}
+
+.list .pokemon .pokemon-info .main-info .pokemon-name {
+  margin: 0;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+}
+
+.list .pokemon .pokemon-info .secondary-info .info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.list .pokemon .pokemon-info .secondary-info .info-list .info-list-item {
+  margin: 5px 0;
+}
+
+.list .pokemon .pokemon-info .secondary-info .info-list .info-list-item ul {
+  padding: 0 0 0 20px;
+}
+
+.list .pokemon .loading-pokemon {
+  width: 48px;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.list .pokemon .pokemon-sprite {
+  width: 96px;
+}
+
+.list .pokemon .pokemon-info-btn {
+  font-family: Lato, sans-serif;
+  color: #e80632;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 55px;
+  padding: 0 10px;
+  border-radius: 5px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.list .further-info {
+  position: fixed;
+  right: 2%;
+  top: 100px;
+  width: 45%;
+  height: 75%;
+  -webkit-box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.45);
+          box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.45);
+  border-radius: 5px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list .further-info .pokemon-name {
+  margin: 30px 0;
+}
+
+.list .further-info .list-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 90%;
+}
+
+.list .further-info .list-box .stat-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.list .further-info .list-box .stat-list .list-title {
+  list-style: none;
+  margin-bottom: 10px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@-webkit-keyframes spin {
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=main.css.map */

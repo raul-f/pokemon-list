@@ -1,0 +1,207 @@
+$pokemon-blue: #464cbd;
+$pokemon-yellow: #ffcc03;
+$pokemon-red: #e80632;
+
+@mixin f-style($direction, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@font-face {
+	font-family: 'pokemon_hollownormal';
+	src: url('./assets/fonts/pokemon/pokemon_hollow-webfont.woff2')
+			format('woff2'),
+		url('./assets/fonts/pokemon/pokemon_hollow-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pokemon_solidnormal';
+	src: url('./assets/fonts/pokemon/pokemon_solid-webfont.woff2')
+			format('woff2'),
+		url('./assets/fonts/pokemon/pokemon_solid-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	margin: 0;
+	font-family: Lato, sans-serif;
+}
+
+.app {
+	position: relative;
+	@include f-style(column, center, center);
+	min-height: 110vh;
+	padding-bottom: 30px;
+	.header {
+		width: 90%;
+		height: 77px;
+		@include f-style(row, space-between, center);
+		box-shadow: 1px 1px 5px 0px rgba($color: #000000, $alpha: 0.35);
+		border-bottom: 3px solid black;
+		background-color: $pokemon-red;
+		color: white;
+		padding: 0 5%;
+		position: fixed;
+		top: 0;
+		.navbox {
+			.current-page {
+				margin-right: 20px;
+			}
+			@include f-style(row, center, center);
+			.nav-button {
+				height: 20px;
+				width: 20px;
+				border: 1px solid black;
+				background-color: white;
+				outline: none;
+				cursor: pointer;
+				@include f-style(column, center, center);
+				padding: 0;
+				.fas {
+					pointer-events: none;
+				}
+				border-right: none;
+			}
+			div {
+				@include f-style(row, center, center);
+			}
+			.nav-button-left {
+				border-radius: 5px 0 0 5px;
+			}
+			.nav-button-right {
+				border-radius: 0 5px 5px 0;
+				border-right: 1px solid black;
+			}
+		}
+		z-index: 1000;
+	}
+	.main-section {
+		@include f-style(column, center, center);
+		width: 100%;
+		margin-top: 100px;
+	}
+	.footer {
+		width: 100%;
+		height: 27px;
+		background-color: $pokemon-red;
+		position: absolute;
+		bottom: 0;
+		border-top: 3px solid black;
+	}
+}
+
+.loading-box {
+	.loading-icon {
+		max-width: 48px;
+		animation-name: spin;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
+}
+
+.list {
+	@include f-style(column, space-around, flex-start);
+	width: 100%;
+	.pokemon {
+		cursor: pointer;
+		@include f-style(row, space-between, center);
+		margin-bottom: 25px;
+		margin-left: 10%;
+		background-color: white;
+		width: 30%;
+		padding: 0 20px 0 0;
+		box-shadow: 1px 1px 5px 0px rgba($color: #000000, $alpha: 0.35);
+		border-radius: 5px;
+		height: 175px;
+		.pokemon-info {
+			@include f-style(row, space-between, center);
+			.main-info {
+				.pokemon-name {
+					margin: 0;
+					font-weight: normal;
+					font-size: 24px;
+					text-align: center;
+				}
+				// border: 1px solid black;
+				@include f-style(column, space-around, center);
+				width: 250px;
+				height: 150px;
+			}
+			.secondary-info {
+				// border: 1px solid black;
+				.info-list {
+					list-style: none;
+					padding: 0;
+					.info-list-item {
+						margin: 5px 0;
+						ul {
+							padding: 0 0 0 20px;
+						}
+					}
+				}
+			}
+		}
+		.loading-pokemon {
+			width: 48px;
+			animation-name: spin;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+		.pokemon-sprite {
+			width: 96px;
+		}
+		.pokemon-info-btn {
+			font-family: Lato, sans-serif;
+			color: $pokemon-red;
+			background-color: transparent;
+			border: none;
+			outline: none;
+			font-size: 55px;
+			padding: 0 10px;
+			border-radius: 5px;
+			margin-right: 40px;
+			cursor: pointer;
+		}
+	}
+
+	.further-info {
+		position: fixed;
+		right: 2%;
+		top: 100px;
+		width: 45%;
+		height: 75%;
+		box-shadow: 1px 1px 10px 0px rgba($color: #000000, $alpha: 0.45);
+		border-radius: 5px;
+		background-color: white;
+		@include f-style(column, flex-start, center);
+		.pokemon-name {
+			margin: 30px 0;
+		}
+		.list-box {
+			@include f-style(row, space-around, flex-start);
+			width: 90%;
+			.stat-list {
+				@include f-style(column, center, flex-start);
+				.list-title {
+					list-style: none;
+					margin-bottom: 10px;
+					align-self: center;
+				}
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
