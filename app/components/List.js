@@ -6,7 +6,7 @@ import FurtherInfo from './list/FurtherInfo'
 
 const List = props => {
 	return (
-		<main className="list">
+		<div className="list">
 			{props.pokemonList.map((value, index) => {
 				return (
 					<Pokemon
@@ -17,7 +17,7 @@ const List = props => {
 				)
 			})}
 			<FurtherInfo pokemon={props.currentPokemon} />
-		</main>
+		</div>
 	)
 }
 

@@ -48,6 +48,7 @@ body {
 		padding: 0 5%;
 		position: fixed;
 		top: 0;
+		left: 0;
 		.navbox {
 			.current-page {
 				margin-right: 20px;
@@ -91,6 +92,7 @@ body {
 		background-color: $pokemon-red;
 		position: absolute;
 		bottom: 0;
+		left: 0;
 		border-top: 3px solid black;
 	}
 }
@@ -151,9 +153,11 @@ body {
 			animation-name: spin;
 			animation-duration: 1s;
 			animation-iteration-count: infinite;
+			animation: spin 1s infinite;
 		}
 		.pokemon-sprite {
 			width: 96px;
+			animation: none;
 		}
 		.pokemon-info-btn {
 			font-family: Lato, sans-serif;

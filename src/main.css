@@ -60,6 +60,7 @@ body {
   padding: 0 5%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
 }
 
@@ -160,6 +161,7 @@ body {
   background-color: #e80632;
   position: absolute;
   bottom: 0;
+  left: 0;
   border-top: 3px solid black;
 }
 
@@ -276,10 +278,14 @@ body {
           animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+  -webkit-animation: spin 1s infinite;
+          animation: spin 1s infinite;
 }
 
 .list .pokemon .pokemon-sprite {
   width: 96px;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .list .pokemon .pokemon-info-btn {
